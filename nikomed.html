@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKAMED - Shaxsiy Tibbiy Klinika</title>
+    <meta name="description" content="Qo'yliq yaqinidagi zamonaviy shaxsiy klinika. Diagnostika, davolash, fizioterapiya va reabilitatsiya xizmatlari.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1e40af",
+                        secondary: "#1e3a8a",
+                        accent: "#3b82f6",
+                        light: "#f0f9ff"
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(30, 64, 175, 0.8), rgba(30, 58, 138, 0.8)), url('https://picsum.photos/1600/900?random=101');
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .doctor-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-hospital-alt mr-2"></i> NIKAMED
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Bosh Sahifa</a>
+                <a href="#about" class="nav-link">Biz Haqimizda</a>
+                <a href="#specialists" class="nav-link">Shifokorlar</a>
+                <a href="#services" class="nav-link">Xizmatlar</a>
+                <a href="#contact" class="nav-link">Aloqa</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition duration-300">Vaqt Oling</a>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="nav-link-mobile">Bosh Sahifa</a>
+                <a href="#about" class="nav-link-mobile">Biz Haqimizda</a>
+                <a href="#specialists" class="nav-link-mobile">Shifokorlar</a>
+                <a href="#services" class="nav-link-mobile">Xizmatlar</a>
+                <a href="#contact" class="nav-link-mobile">Aloqa</a>
+                <a href="#contact" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg text-center transition duration-300">Vaqt Oling</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="hero-bg bg-cover bg-center text-white py-20 md:py-32 animate-fade-in">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">NIKAMED – Sizning sog'lig'ingiz, bizning g'amxo'rligimiz</h1>
+                <p class="text-xl md:text-2xl mb-8 animate-slide-up">Qo'yliq yaqinidagi zamonaviy shaxsiy klinika</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4 animate-slide-up">
+                    <a href="#contact" class="bg-white text-primary hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300">Vaqt Oling</a>
+                    <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary px-6 py-3 rounded-lg font-semibold transition duration-300">Xizmatlarimiz</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Highlights -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Asosiy Xizmatlar</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Diagnostika</h3>
+                        <p class="text-gray-600">Zamonaviy laboratoriya va USG uskunalari bilan to'liq tekshiruv</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Mutaxassislar</h3>
+                        <p class="text-gray-600">Yuqori malakali shifokorlar tomonidan konsultatsiya va davolash</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Fizioterapiya</h3>
+                        <p class="text-gray-600">Britaniyaning BTL uskunalari bilan zamonaviy fizioterapiya</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-procedures"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">36-o'rinli Statsionar</h3>
+                        <p class="text-gray-600">Qulay sharoitdagi to'liq kuzatuv ostida davolanish</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-hot-tub"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">SPA Protseduralari</h3>
+                        <p class="text-gray-600">Dam olish va reabilitatsiya uchun maxsus SPA xizmatlari</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                        <div class="text-4xl text-primary mb-4">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Muvozanatli Ovqatlanish</h3>
+                        <p class="text-gray-600">Shifokor nazorati ostida tayyorlangan maxsus parhez ovqatlar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Page -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Biz Haqimizda</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in">
+                        <img src="https://picsum.photos/600/400?random=102" alt="NIKAMED klinikasi binosi" class="rounded-lg shadow-lg w-full" loading="lazy">
+                    </div>
+                    <div class="animate-slide-up">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">NIKAMED - Sog'liqni Saqlashda Ishonchli Hamkor</h3>
+                        <p class="text-gray-700 mb-4">Farg'ona Yo'li 569, Yashnobod, Toshkent shahrida joylashgan NIKAMED klinikasi 2010-yildan buyon xizmat ko'rsatib kelmoqda. Bizning maqsad - har bir bemorga shaxsiy yondashuv va yuqori sifatli tibbiy yordam ko'rsatish.</p>
+                        <p class="text-gray-700 mb-6">Ish tartibi: Dushanbadan Shanbagacha soat 08:00 dan 17:00 gacha.</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-xl font-semibold mb-3 text-primary">Bizning Afzalliklarimiz:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                                    <span>36-o'rinli qulay statsionar bo'limi</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                                    <span>Britaniyaning zamonaviy BTL uskunalari</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                                    <span>Tajribali shifokorlar jamoasi</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                                    <span>Fizioterapiya, massaj va SPA xizmatlari</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mr-2 mt-1"></i>
+                                    <span>Parhez ovqatlanish tizimi</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-semibold text-center mb-8 text-primary">Bemorlarimiz Fikrlari</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-light p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 font-semibold">4.5/5</span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4">"Klinikada davolanganimdan juda mamnunman. Shifokorlar juda malakali va bemorga g'amxo'r munosabatda bo'lishadi. Xona sharoitlari ham juda qulay."</p>
+                            <p class="font-semibold">- Dilfuza R.</p>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 font-semibold">5/5</span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4">"Fizioterapiya bo'limida davolanganman. Uskunalar juda zamonaviy va samarali. Xodimlar hamisha yumshoq va mehribon. Tavsiya etaman!"</p>
+                            <p class="font-semibold">- Akmal T.</p>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 font-semibold">5/5</span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4">"O'zim va oilam a'zolarim uchun doimiy ravishda NIKAMED klinikasiga murojaat qilamiz. Barcha xizmatlar sifatli va narxlari ham oqilona."</p>
+                            <p class="font-semibold">- Gulnora K.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialists Page -->
+        <section id="specialists" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Bizning Shifokorlarimiz</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Doctor 1 -->
+                    <div class="doctor-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://picsum.photos/400/400?random=201" alt="Tsoy Alyona Nikolayevna" class="w-full h-full object-cover transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-1">Tsoy Alyona Nikolayevna</h3>
+                            <p class="text-accent font-semibold mb-2">Kardiolog, Pulmonolog</p>
+                            <p class="text-gray-600 mb-3">36 yil tajriba, Birinchi toifa</p>
+                            <p class="text-gray-700 mb-4">Yurak-qon tomir tizimi va nafas olish yo'llari kasalliklarini davolash bo'yicha mutaxassis.</p>
+                            <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition duration-300">Vaqt Oling</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Doctor 2 -->
+                    <div class="doctor-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://picsum.photos/400/400?random=202" alt="Qulmo'minov Akmal" class="w-full h-full object-cover transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-1">Qulmo'minov Akmal</h3>
+                            <p class="text-accent font-semibold mb-2">Travmatolog, Jarroh, Ortoped</p>
+                            <p class="text-gray-600 mb-3">16 yil tajriba, Oliy toifa</p>
+                            <p class="text-gray-700 mb-4">Suyaklar, bo'g'imlar va mushaklarning shikastlanishlari va kasalliklarini davolash bo'yicha mutaxassis.</p>
+                            <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition duration-300">Vaqt Oling</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Doctor 3 -->
+                    <div class="doctor-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://picsum.photos/400/400?random=203" alt="Ismoilova Feruza" class="w-full h-full object-cover transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-1">Ismoilova Feruza</h3>
+                            <p class="text-accent font-semibold mb-2">Nevropatolog</p>
+                            <p class="text-gray-600 mb-3">22 yil tajriba, Birinchi toifa</p>
+                            <p class="text-gray-700 mb-4">Nerv tizimi kasalliklarini diagnostikasi va davolash bo'yicha mutaxassis.</p>
+                            <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition duration-300">Vaqt Oling</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Doctor 4 -->
+                    <div class="doctor-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://picsum.photos/400/400?random=204" alt="Yusupov Rustam" class="w-full h-full object-cover transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-1">Yusupov Rustam</h3>
+                            <p class="text-accent font-semibold mb-2">Endokrinolog</p>
+                            <p class="text-gray-600 mb-3">18 yil tajriba, Oliy toifa</p>
+                            <p class="text-gray-700 mb-4">Endokrin tizim kasalliklari (qandli diabet, oshqozon osti bezi kasalliklari) bo'yicha mutaxassis.</p>
+                            <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition duration-300">Vaqt Oling</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Doctor 5 -->
+                    <div class="doctor-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://picsum.photos/400/400?random=205" alt="Karimova Zulfiya" class="w-full h-full object-cover transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-1">Karimova Zulfiya</h3>
+                            <p class="text-accent font-semibold mb-2">Fizioterapevt</p>
+                            <p class="text-gray-600 mb-3">14 yil tajriba, Birinchi toifa</p>
+                            <p class="text-gray-700 mb-4">Fizioterapiya va reabilitatsiya bo'yicha mutaxassis. BTL uskunalari bilan ishlash bo'yicha malakali mutaxassis.</p>
+                            <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition duration-300">Vaqt Oling</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Doctor 6 -->
+                    <div class="doctor-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="overflow-hidden h-64">
+                            <img src="https://picsum.photos/400/400?random=206" alt="Sobirov Jamshid" class="w-full h-full object-cover transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-1">Sobirov Jamshid</h3>
+                            <p class="text-accent font-semibold mb-2">Terapevt</p>
+                            <p class="text-gray-600 mb-3">25 yil tajriba, Oliy toifa</p>
+                            <p class="text-gray-700 mb-4">Umumiy amaliyot shifokori. Ichki kasalliklar bo'yicha keng tajribaga ega mutaxassis.</p>
+                            <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition duration-300">Vaqt Oling</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Xizmatlarimiz</h2>
+                
+                <!-- Diagnostics -->
+                <div class="mb-16 animate-fade-in">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-microscope mr-3"></i> Diagnostika
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Laboratoriya Tekshiruvlari</h4>
+                            <p class="text-gray-700 mb-4">Qon, siydik, najas va boshqa biologik materiallarning to'liq tahlili.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">USG Tekshiruvlari</h4>
+                            <p class="text-gray-700 mb-4">Ichki a'zolar, qon tomirlari va bo'g'imlarning ultratovushli tekshiruvi.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Qon Tomir Diagnostikasi</h4>
+                            <p class="text-gray-700 mb-4">Dopplerografiya va boshqa usullar yordamida qon tomirlarining holatini tekshirish.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Therapy -->
+                <div class="mb-16 animate-fade-in">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-stethoscope mr-3"></i> Terapiya
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Umumiy Terapiya</h4>
+                            <p class="text-gray-700 mb-4">Ichki kasalliklar bo'yicha konsultatsiya va kompleks davolash.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Fizioterapiya</h4>
+                            <p class="text-gray-700 mb-4">Zamonaviy BTL uskunalari yordamida turli kasalliklarni davolash.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Massaj Terapiyasi</h4>
+                            <p class="text-gray-700 mb-4">Turli xil massaj usullari orqali mushaklarni bo'shashish va reabilitatsiya.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Surgeries -->
+                <div class="mb-16 animate-fade-in">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-syringe mr-3"></i> Jarrohlik
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Kichik Jarrohlik Amaliyotlari</h4>
+                            <p class="text-gray-700 mb-4">Kichik jarrohlik aralashuvlari va tez yordam xizmatlari.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Ortopedik Jarrohlik</h4>
+                            <p class="text-gray-700 mb-4">Suyak va bo'g'imlarning jarrohlik yo'li bilan davolanishi.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Plastik Jarrohlik</h4>
+                            <p class="text-gray-700 mb-4">Kosmetik va rekonstruktiv plastik jarrohlik xizmatlari.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SPA and Rehabilitation -->
+                <div class="animate-fade-in">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-spa mr-3"></i> SPA va Reabilitatsiya
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">SPA Protseduralari</h4>
+                            <p class="text-gray-700 mb-4">Dam olish va sog'lomlashtirish uchun turli SPA xizmatlari.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Reabilitatsiya Dasturlari</h4>
+                            <p class="text-gray-700 mb-4">Jarrohlikdan keyingi yoki kasallikdan keyin reabilitatsiya.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="bg-light p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Parhez Ovqatlanish</h4>
+                            <p class="text-gray-700 mb-4">Shifokor nazorati ostida maxsus parhez ovqatlanish tizimi.</p>
+                            <a href="#" class="text-accent font-semibold hover:underline">Ko'proq Ma'lumot <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Aloqa</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-md animate-slide-up">
+                        <h3 class="text-2xl font-semibold text-primary mb-6">Qabulga Yozilish</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Ismingiz</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Telefon Raqamingiz</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Xabar</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-semibold py-3 px-4 rounded-lg transition duration-300">Yuborish</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="animate-slide-up">
+                        <div class="bg-white p-8 rounded-lg shadow-md mb-6">
+                            <h3 class="text-2xl font-semibold text-primary mb-4">Bizning Manzil</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-accent text-xl mr-3 mt-1"></i>
+                                    <p>Farg'ona Yo'li 569, Yashnobod, Toshkent</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone-alt text-accent text-xl mr-3"></i>
+                                    <p>+998-71-295-83-83</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock text-accent text-xl mr-3"></i>
+                                    <p>Ish tartibi: Dushanbadan Shanbagacha 08:00 - 17:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Map -->
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="overflow-hidden rounded-lg h-64">
+                                <!-- Map placeholder - in a real implementation you would embed Google Maps -->
+                                <img src="https://picsum.photos/800/400?random=301" alt="NIKAMED klinikasi manzili xaritada" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+                            <h3 class="text-xl font-semibold text-primary mb-4">Ijtimoiy Tarmoqlarda Biz</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-primary hover:text-secondary text-2xl transition duration-300">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-secondary text-2xl transition duration-300">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-secondary text-2xl transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">NIKAMED</h3>
+                    <p class="mb-4">Sizning sog'lig'ingiz, bizning g'amxo'rligimiz</p>
+                    <p>© 2023 NIKAMED. Barcha huquqlar himoyalangan.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tezkor Havolalar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-accent transition duration-300">Bosh Sahifa</a></li>
+                        <li><a href="#about" class="hover:text-accent transition duration-300">Biz Haqimizda</a></li>
+                        <li><a href="#specialists" class="hover:text-accent transition duration-300">Shifokorlar</a></li>
+                        <li><a href="#services" class="hover:text-accent transition duration-300">Xizmatlar</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition duration-300">Aloqa</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Aloqa</h3>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Farg'ona Yo'li 569, Yashnobod, Toshkent</p>
+                    <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i> +998-71-295-83-83</p>
+                    <p><i class="fas fa-clock mr-2"></i> Dushanba-Shanba: 08:00 - 17:00</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p>Veb-sayt <a href="#" class="text-accent font-semibold">NIKAMED</a> tomonidan ishlab chiqilgan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', { name, phone, message });
+            
+            // Show success message
+            alert('So'rovingiz qabul qilindi! Tez orada siz bilan bog'lanamiz.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Data for services (could be expanded)
+        const servicesData = [
+            {
+                "category": "Diagnostika",
+                "services": [
+                    { "name": "Laboratoriya Tekshiruvlari", "description": "Qon, siydik, najas va boshqa biologik materiallarning to'liq tahlili." },
+                    { "name": "USG Tekshiruvlari", "description": "Ichki a'zolar, qon tomirlari va bo'g'imlarning ultratovushli tekshiruvi." },
+                    { "name": "Qon Tomir Diagnostikasi", "description": "Dopplerografiya va boshqa usullar yordamida qon tomirlarining holatini tekshirish." }
+                ]
+            },
+            {
+                "category": "Terapiya",
+                "services": [
+                    { "name": "Umumiy Terapiya", "description": "Ichki kasalliklar bo'yicha konsultatsiya va kompleks davolash." },
+                    { "name": "Fizioterapiya", "description": "Zamonaviy BTL uskunalari yordamida turli kasalliklarni davolash." },
+                    { "name": "Massaj Terapiyasi", "description": "Turli xil massaj usullari orqali mushaklarni bo'shashish va reabilitatsiya." }
+                ]
+            }
+        ];
+
+        // Data for doctors (could be expanded)
+        const doctorsData = [
+            {
+                "name": "Tsoy Alyona Nikolayevna",
+                "specialty": "Kardiolog, Pulmonolog",
+                "experience": "36 yil tajriba",
+                "category": "Birinchi toifa",
+                "description": "Yurak-qon tomir tizimi va nafas olish yo'llari kasalliklarini davolash bo'yicha mutaxassis."
+            },
+            {
+                "name": "Qulmo'minov Akmal",
+                "specialty": "Travmatolog, Jarroh, Ortoped",
+                "experience": "16 yil tajriba",
+                "category": "Oliy toifa",
+                "description": "Suyaklar, bo'g'imlar va mushaklarning shikastlanishlari va kasalliklarini davolash bo'yicha mutaxassis."
+            }
+        ];
+    </script>
+</body>
+</html>
